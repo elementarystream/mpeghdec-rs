@@ -71,14 +71,14 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-arith"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-core"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-arith",
  "mpeghdec-drc",
@@ -93,32 +93,32 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-cref"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "cc",
 ]
 
 [[package]]
 name = "mpeghdec-digest-derive"
-version = "0.1.0"
+version = "0.0.1"
 
 [[package]]
 name = "mpeghdec-drc"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-fdk"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-digest-derive",
 ]
 
 [[package]]
 name = "mpeghdec-formatconverter"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-drc",
  "mpeghdec-fdk",
@@ -139,14 +139,14 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-gvbap"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-igf"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-arith",
  "mpeghdec-fdk",
@@ -154,21 +154,21 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-pcmutils"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-tpdec"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-uimanager"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "mpeghdec-fdk",
  "mpeghdec-tpdec",
