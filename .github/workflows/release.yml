@@ -44,9 +44,39 @@ jobs:
       - uses: rust-lang/crates-io-auth-action@v1
         id: auth
         if: vars.CRATES_IO_TRUSTED_PUBLISHING == 'true'
-      - run: cargo publish --workspace --locked --exclude mpeghdec-capi --exclude mpeghdec-cref
+      - name: Publish the crates that are not on crates.io yet
         env:
           CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token || secrets.CARGO_REGISTRY_TOKEN }}
+        run: |
+          # crates.io limits the rate of new crates: wait for the time named in the response and
+          # publish the rest. A run that failed can be run again.
+          set -o pipefail
+          version="${GITHUB_REF_NAME#v}"
+          packages="$(cargo metadata --no-deps --format-version 1 --locked |
+            jq -r '.packages[] | select(.publish == null) | .name')"
+          for attempt in $(seq 1 30); do
+            exclude=(--exclude mpeghdec-capi --exclude mpeghdec-cref)
+            pending=0
+            for p in $packages; do
+              if curl -sf -o /dev/null -A "$GITHUB_REPOSITORY release workflow" \
+                "https://crates.io/api/v1/crates/$p/$version"; then
+                exclude+=(--exclude "$p")
+              else
+                pending=$((pending + 1))
+              fi
+            done
+            [ $pending -eq 0 ] && exit 0
+            echo "$pending crates to publish"
+            if cargo publish --workspace --locked "${exclude[@]}" 2>&1 | tee "$RUNNER_TEMP/publish.log"; then
+              exit 0
+            fi
+            retry="$(sed -n 's/.*status 429 .*try again after \(.* GMT\).*/\1/p' "$RUNNER_TEMP/publish.log" | head -1)"
+            [ -n "$retry" ] || exit 1
+            wait=$(( $(date -d "$retry" +%s) - $(date +%s) + 30 ))
+            echo "rate limited until $retry"
+            sleep $(( wait > 30 ? wait : 30 ))
+          done
+          exit 1
 
   github-release:
     needs: publish
