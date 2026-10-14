@@ -1,0 +1,6 @@
+.DS_Store
+/work
+/target
+/fuzz/target
+/fuzz/corpus
+/fuzz/artifacts

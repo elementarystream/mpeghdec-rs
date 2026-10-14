@@ -1,0 +1,20 @@
+[package]
+name = "mpeghdec-capi"
+description = "C ABI of mpeghdec, a drop-in replacement for the Fraunhofer mpeghdec library"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[lib]
+name = "mpeghdec_capi"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+mpeghdec-core.workspace = true
+mpeghdec-uimanager.workspace = true

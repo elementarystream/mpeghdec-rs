@@ -1,0 +1,87 @@
+[workspace]
+resolver = "2"
+exclude = ["fuzz"]
+members = [
+    "crates/digest-derive",
+    "crates/fdk",
+    "crates/arith",
+    "crates/drc",
+    "crates/pcmutils",
+    "crates/tpdec",
+    "crates/igf",
+    "crates/gvbap",
+    "crates/formatconverter",
+    "crates/uimanager",
+    "crates/core",
+    "crates/mpeghdec",
+    "crates/cli",
+    "crates/capi",
+    "crates/cref",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license-file = "LICENSE.txt"
+repository = "https://github.com/elementarystream/mpeghdec-rs"
+readme = "README.md"
+keywords = ["mpeg-h", "audio", "decoder", "spatial-audio", "codec"]
+categories = ["multimedia::audio", "multimedia::encoding"]
+
+[workspace.dependencies]
+mpeghdec-digest-derive = { path = "crates/digest-derive", version = "0.1.0" }
+mpeghdec-fdk = { path = "crates/fdk", version = "0.1.0" }
+mpeghdec-arith = { path = "crates/arith", version = "0.1.0" }
+mpeghdec-drc = { path = "crates/drc", version = "0.1.0" }
+mpeghdec-pcmutils = { path = "crates/pcmutils", version = "0.1.0" }
+mpeghdec-tpdec = { path = "crates/tpdec", version = "0.1.0" }
+mpeghdec-igf = { path = "crates/igf", version = "0.1.0" }
+mpeghdec-gvbap = { path = "crates/gvbap", version = "0.1.0" }
+mpeghdec-formatconverter = { path = "crates/formatconverter", version = "0.1.0" }
+mpeghdec-uimanager = { path = "crates/uimanager", version = "0.1.0" }
+mpeghdec-core = { path = "crates/core", version = "0.1.0" }
+mpeghdec = { path = "crates/mpeghdec", version = "0.1.0" }
+
+[workspace.lints.rust]
+# The port mirrors the C code structure closely; these lints would only add noise.
+non_snake_case = "allow"
+non_camel_case_types = "allow"
+non_upper_case_globals = "allow"
+dead_code = "allow"
+
+[workspace.lints.clippy]
+# Float constants are copied digit for digit from the C++ sources.
+excessive_precision = "allow"
+approx_constant = "allow"
+too_many_arguments = "allow"
+needless_range_loop = "allow"
+identity_op = "allow"
+erasing_op = "allow"
+precedence = "allow"
+collapsible_else_if = "allow"
+collapsible_if = "allow"
+manual_range_contains = "allow"
+neg_multiply = "allow"
+unnecessary_cast = "allow"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+debug = 1
+
+# Release optimizations with overflow and debug assertions enabled. Use this profile to catch
+# arithmetic that diverges from the C reference (C relies on silent wrap-around only rarely).
+[profile.checked]
+inherits = "release"
+overflow-checks = true
+debug-assertions = true
+lto = "thin"
+codegen-units = 16
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2

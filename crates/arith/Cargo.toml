@@ -1,0 +1,17 @@
+[package]
+name = "mpeghdec-arith"
+description = "Arithmetic spectral decoding of the mpeghdec MPEG-H decoder (port of libArithCoding)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+mpeghdec-fdk.workspace = true

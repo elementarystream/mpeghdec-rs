@@ -1,0 +1,25 @@
+[package]
+name = "mpeghdec-core"
+description = "MPEG-H 3D Audio core decoder of mpeghdec (port of libMpeghDec)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+mpeghdec-fdk.workspace = true
+mpeghdec-arith.workspace = true
+mpeghdec-drc.workspace = true
+mpeghdec-pcmutils.workspace = true
+mpeghdec-tpdec.workspace = true
+mpeghdec-igf.workspace = true
+mpeghdec-gvbap.workspace = true
+mpeghdec-formatconverter.workspace = true
+mpeghdec-uimanager.workspace = true

@@ -1,0 +1,11 @@
+prefix=@PREFIX@
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: mpeghdec
+Description: Third-Party Modified Version of the Fraunhofer FDK MPEG-H Software (mpeghdec-rs, a Rust port of mpeghdec r4.0.1)
+URL: https://github.com/elementarystream/mpeghdec-rs
+Version: 4.0.0
+Cflags: -I"${includedir}"
+Libs: -L"${libdir}" -lmpeghdec -lm
+Libs.private: @NATIVE_STATIC_LIBS@

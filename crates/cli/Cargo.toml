@@ -1,0 +1,23 @@
+[package]
+name = "mpeghdec-cli"
+description = "Command line MPEG-H 3D Audio decoder (Third-Party Modified Version of the Fraunhofer FDK MPEG-H Software, ported to Rust)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+mpeghdec.workspace = true
+mpeghdec-fdk.workspace = true
+
+[[bin]]
+name = "mpeghdec"
+path = "src/main.rs"
+doc = false

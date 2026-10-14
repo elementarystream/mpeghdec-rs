@@ -1,0 +1,28 @@
+diff --git a/test/impeghe_testbench.c b/test/impeghe_testbench.c
+index 2221766..4a7b4a6 100644
+--- a/test/impeghe_testbench.c
++++ b/test/impeghe_testbench.c
+@@ -710,6 +710,23 @@ IA_ERRORCODE impeghe_parse_config_param(WORD32 argc, pWORD8 argv[], pVOID ptr_en
+       impeghe_print_usage();
+     }
+     /* Stream bit rate */
++    /* Local test-vector options (mpeghdec-rs) */
++    if (!strncmp((pCHAR8)argv[i], "-mct:", 5))
++      pstr_enc_api->input_config.mct_mode = atoi((pCHAR8)argv[i] + 5);
++    if (!strncmp((pCHAR8)argv[i], "-cplx_pred:", 11))
++      pstr_enc_api->input_config.cplx_pred = atoi((pCHAR8)argv[i] + 11);
++    if (!strncmp((pCHAR8)argv[i], "-fdp:", 5))
++      pstr_enc_api->input_config.fdp_enable = atoi((pCHAR8)argv[i] + 5);
++    if (!strncmp((pCHAR8)argv[i], "-ltpf:", 6))
++      pstr_enc_api->input_config.ltpf_enable = atoi((pCHAR8)argv[i] + 6);
++    if (!strncmp((pCHAR8)argv[i], "-tns:", 5))
++      pstr_enc_api->input_config.tns_enable = atoi((pCHAR8)argv[i] + 5);
++    if (!strncmp((pCHAR8)argv[i], "-nf:", 4))
++      pstr_enc_api->input_config.noise_filling = atoi((pCHAR8)argv[i] + 4);
++    if (!strncmp((pCHAR8)argv[i], "-enf:", 5))
++      pstr_enc_api->input_config.enhanced_noise_filling = atoi((pCHAR8)argv[i] + 5);
++    if (!strncmp((pCHAR8)argv[i], "-kernel:", 8))
++      pstr_enc_api->input_config.kernel = atoi((pCHAR8)argv[i] + 8);
+     if (!strncmp((pCHAR8)argv[i], "-br:", 4))
+     {
+       pCHAR8 pb_arg_val = (pCHAR8)argv[i] + 4;

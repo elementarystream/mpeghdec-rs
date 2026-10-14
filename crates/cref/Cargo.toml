@@ -1,0 +1,30 @@
+[package]
+name = "mpeghdec-cref"
+description = "Differential tests against the Fraunhofer C++ reference implementation (development only)"
+version.workspace = true
+publish = false
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+
+[build-dependencies]
+cc = { version = "1", features = ["parallel"] }
+
+[dev-dependencies]
+mpeghdec-fdk.workspace = true
+mpeghdec-arith.workspace = true
+mpeghdec-drc.workspace = true
+mpeghdec-pcmutils.workspace = true
+mpeghdec-tpdec.workspace = true
+mpeghdec-igf.workspace = true
+mpeghdec-gvbap.workspace = true
+mpeghdec-formatconverter.workspace = true
+mpeghdec-uimanager.workspace = true
+mpeghdec-core.workspace = true
+mpeghdec.workspace = true

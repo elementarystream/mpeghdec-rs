@@ -1,0 +1,20 @@
+[package]
+name = "mpeghdec"
+description = "MPEG-H 3D Audio decoder and UI manager (Third-Party Modified Version of the Fraunhofer FDK MPEG-H Software, ported to Rust)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+mpeghdec-fdk.workspace = true
+mpeghdec-tpdec.workspace = true
+mpeghdec-uimanager.workspace = true
+mpeghdec-core.workspace = true

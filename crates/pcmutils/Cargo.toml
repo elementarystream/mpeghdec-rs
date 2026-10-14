@@ -1,0 +1,17 @@
+[package]
+name = "mpeghdec-pcmutils"
+description = "PCM limiter and utilities of mpeghdec (port of libPCMutils)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+mpeghdec-fdk.workspace = true
