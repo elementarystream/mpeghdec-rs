@@ -877,15 +877,13 @@ fn get_white_spectral_data(
                 exp_env += 2; /* exp_env: -8 */
             }
         }
-        -8 => {
-            /* Normalization and shift in range 1..2 */
-            if shift_energy == 2 {
-                /* We need a shift-right by 4 */
-                /* Normalization and shift in range 0..4 */
-                shift_energy = 4;
-                env >>= 2;
-                exp_env += 2; /* exp_env: -6 */
-            }
+        /* Normalization and shift in range 1..2 */
+        -8 if shift_energy == 2 => {
+            /* We need a shift-right by 4 */
+            /* Normalization and shift in range 0..4 */
+            shift_energy = 4;
+            env >>= 2;
+            exp_env += 2; /* exp_env: -6 */
         }
         _ => { /* [-6, -4, .. +??]: shift_energy = 2 already set */ }
     }

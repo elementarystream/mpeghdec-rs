@@ -496,14 +496,10 @@ impl DrcDecoder {
                 self.sel_proc_output.target_channel_count as i32
             }
             DRC_DEC_OUTPUT_LOUDNESS => self.sel_proc_output.output_loudness,
-            DRC_DEC_IS_MUTE => {
-                /* If uniDrc() payload is present, but no loudnessInfoSet contained so far,
-                DRC decoder output shall be mute for 2.5 seconds after startup. */
-                if self.status == DRCDEC_INCOMPLETE_UNIDRC {
-                    drc_dec_gain_decoder_get_startup_phase(self.h_gain_dec.as_deref())
-                } else {
-                    0
-                }
+            /* If uniDrc() payload is present, but no loudnessInfoSet contained so far,
+            DRC decoder output shall be mute for 2.5 seconds after startup. */
+            DRC_DEC_IS_MUTE if self.status == DRCDEC_INCOMPLETE_UNIDRC => {
+                drc_dec_gain_decoder_get_startup_phase(self.h_gain_dec.as_deref())
             }
             _ => 0,
         }
