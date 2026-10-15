@@ -55,7 +55,7 @@ checksum = "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
 
 [[package]]
 name = "mpeghdec"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-core",
  "mpeghdec-fdk",
@@ -65,14 +65,14 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-arith"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-capi"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-core",
  "mpeghdec-uimanager",
@@ -80,7 +80,7 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-cli"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec",
  "mpeghdec-fdk",
@@ -88,7 +88,7 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-core"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-arith",
  "mpeghdec-drc",
@@ -103,7 +103,7 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-cref"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "cc",
  "mpeghdec",
@@ -121,25 +121,25 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-digest-derive"
-version = "0.0.1"
+version = "0.1.0"
 
 [[package]]
 name = "mpeghdec-drc"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-fdk"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-digest-derive",
 ]
 
 [[package]]
 name = "mpeghdec-formatconverter"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-drc",
  "mpeghdec-fdk",
@@ -148,14 +148,14 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-gvbap"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-igf"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-arith",
  "mpeghdec-fdk",
@@ -163,21 +163,21 @@ dependencies = [
 
 [[package]]
 name = "mpeghdec-pcmutils"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-tpdec"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-fdk",
 ]
 
 [[package]]
 name = "mpeghdec-uimanager"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
  "mpeghdec-fdk",
  "mpeghdec-tpdec",

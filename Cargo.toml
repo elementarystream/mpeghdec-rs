@@ -20,7 +20,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.0.1"
+version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
 license-file = "LICENSE.txt"
@@ -30,18 +30,18 @@ keywords = ["mpeg-h", "audio", "decoder", "spatial-audio", "codec"]
 categories = ["multimedia::audio", "multimedia::encoding"]
 
 [workspace.dependencies]
-mpeghdec-digest-derive = { path = "crates/digest-derive", version = "0.0.1" }
-mpeghdec-fdk = { path = "crates/fdk", version = "0.0.1" }
-mpeghdec-arith = { path = "crates/arith", version = "0.0.1" }
-mpeghdec-drc = { path = "crates/drc", version = "0.0.1" }
-mpeghdec-pcmutils = { path = "crates/pcmutils", version = "0.0.1" }
-mpeghdec-tpdec = { path = "crates/tpdec", version = "0.0.1" }
-mpeghdec-igf = { path = "crates/igf", version = "0.0.1" }
-mpeghdec-gvbap = { path = "crates/gvbap", version = "0.0.1" }
-mpeghdec-formatconverter = { path = "crates/formatconverter", version = "0.0.1" }
-mpeghdec-uimanager = { path = "crates/uimanager", version = "0.0.1" }
-mpeghdec-core = { path = "crates/core", version = "0.0.1" }
-mpeghdec = { path = "crates/mpeghdec", version = "0.0.1" }
+mpeghdec-digest-derive = { path = "crates/digest-derive", version = "0.1.0" }
+mpeghdec-fdk = { path = "crates/fdk", version = "0.1.0" }
+mpeghdec-arith = { path = "crates/arith", version = "0.1.0" }
+mpeghdec-drc = { path = "crates/drc", version = "0.1.0" }
+mpeghdec-pcmutils = { path = "crates/pcmutils", version = "0.1.0" }
+mpeghdec-tpdec = { path = "crates/tpdec", version = "0.1.0" }
+mpeghdec-igf = { path = "crates/igf", version = "0.1.0" }
+mpeghdec-gvbap = { path = "crates/gvbap", version = "0.1.0" }
+mpeghdec-formatconverter = { path = "crates/formatconverter", version = "0.1.0" }
+mpeghdec-uimanager = { path = "crates/uimanager", version = "0.1.0" }
+mpeghdec-core = { path = "crates/core", version = "0.1.0" }
+mpeghdec = { path = "crates/mpeghdec", version = "0.1.0" }
 
 [workspace.lints.rust]
 # The port mirrors the C code structure closely; these lints would only add noise.
