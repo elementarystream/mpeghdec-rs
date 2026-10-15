@@ -1,5 +1,8 @@
 # mpeghdec-rs
 
+[![crates.io](https://img.shields.io/crates/v/mpeghdec.svg)](https://crates.io/crates/mpeghdec)
+[![CI](https://github.com/elementarystream/mpeghdec-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/elementarystream/mpeghdec-rs/actions/workflows/ci.yml)
+
 A Rust port of the [Fraunhofer MPEG-H decoder (mpeghdec)](https://github.com/Fraunhofer-IIS/mpeghdec),
 an implementation of the MPEG-H 3D Audio standard (ISO/IEC 23008-3), Baseline profile.
 
